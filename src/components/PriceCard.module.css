@@ -6,6 +6,7 @@
   max-width: 560px;
   /* Deep Emerald top rule — gives the card structure and weight */
   box-shadow: inset 0 3px 0 var(--emerald), var(--shadow-md);
+  min-width: 0;
 }
 .name {
   font-size: 0.78rem;
@@ -17,7 +18,8 @@
 }
 .amount {
   font-family: var(--serif);
-  font-size: 3rem;
+  /* Scales down rather than forcing a 48px price onto a 320px screen. */
+  font-size: clamp(2.1rem, 9vw, 3rem);
   color: var(--charcoal);
   margin: 0 0 6px;
   line-height: 1.05;
@@ -76,4 +78,16 @@
   font-size: 1.2rem;
   color: var(--charcoal);
   line-height: 1.2;
+}
+
+@media (max-width: 620px) {
+  .card {
+    padding: 32px 24px 28px;
+  }
+  /* The CTA is a block-level control, so let it span the card. */
+  .card :global(.btn) {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
 }

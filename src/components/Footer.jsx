@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
-import { WHATSAPP_BASE_URL, WHATSAPP_NUMBER_DISPLAY } from "../constants.js";
+import Logo from "./Logo.jsx";
+import { WHATSAPP_GENERAL_URL, WHATSAPP_NUMBER_DISPLAY } from "../constants.js";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -10,7 +11,7 @@ export default function Footer() {
       <div className="wrap">
         <div className={styles.grid}>
           <div className={styles.brand}>
-            <span className={styles.brandName}>LEVICON DIGITAL</span>
+            <Logo variant="dark" />
             <p>
               A service of Levicon Systems Ltd. We help small businesses in Nigeria get
               properly set up and visible online.
@@ -41,7 +42,7 @@ export default function Footer() {
               <h5>Get in touch</h5>
               <ul>
                 <li>
-                  <a href={WHATSAPP_BASE_URL} target="_blank" rel="noopener noreferrer">
+                  <a href={WHATSAPP_GENERAL_URL} target="_blank" rel="noopener noreferrer">
                     WhatsApp: {WHATSAPP_NUMBER_DISPLAY}
                   </a>
                 </li>

@@ -15,27 +15,7 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
-  font-family: var(--serif);
-}
-.brandMark {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 1.22rem;
-  color: var(--charcoal);
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-}
-/* Deep Emerald identity block — separates LEVICON DIGITAL from LEVICON SOLAR */
-.brandMark::before {
-  content: "";
-  width: 11px;
-  height: 22px;
-  border-radius: 2px;
-  background: var(--emerald);
 }
 .links {
   display: flex;
@@ -100,40 +80,86 @@
 }
 
 @media (max-width: 880px) {
+  /* The mobile menu below is `position: fixed`. `backdrop-filter` on .site
+     would make the header the containing block for fixed descendants, which
+     collapses the panel to the header's own height and spills the links over
+     the page below. Drop the blur here and use an opaque background instead. */
+  .site {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--white);
+  }
+
+  /* Logo and toggle stay on row one; the WhatsApp CTA takes the full width of
+     row two so it is never squeezed out of view or made too small to tap. */
+  .nav {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+  .brand {
+    order: 1;
+    min-width: 0;
+  }
+  .cta {
+    display: contents;
+  }
+  .toggle {
+    display: block;
+    order: 2;
+    margin-left: auto;
+    flex: none;
+  }
+  .cta :global(.btn-accent) {
+    order: 3;
+    display: inline-flex;
+    flex: 1 0 100%;
+    justify-content: center;
+    min-height: 48px;
+    font-size: 0.95rem;
+    padding: 0.85em 1.2em;
+  }
+
+  /* Anchored below the header rather than over it, so the logo and toggle stay
+     visible and tappable while the menu is open. */
   .links {
     position: fixed;
-    inset: 0;
+    top: var(--header-h, 68px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     background: var(--cream);
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0;
-    padding: 92px 28px 30px;
+    padding: 12px 20px calc(28px + env(safe-area-inset-bottom));
     transform: translateY(-8px);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.18s ease, transform 0.18s ease;
-    border-bottom: 1px solid var(--line);
+    visibility: hidden;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
   }
   .links.open {
     opacity: 1;
     pointer-events: auto;
+    visibility: visible;
     transform: translateY(0);
   }
   .links li {
-    width: 100%;
     border-bottom: 1px solid var(--line);
+  }
+  .links li:last-child {
+    border-bottom: none;
   }
   .links a {
     display: block;
-    padding: 16px 0;
+    font-size: 1.05rem;
+    padding: 17px 0;
+    overflow-wrap: break-word;
   }
   .links a.active {
     border-color: transparent;
-  }
-  .cta :global(.btn-accent) {
-    display: none;
-  }
-  .toggle {
-    display: block;
   }
 }

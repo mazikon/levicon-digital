@@ -4,7 +4,7 @@ import useDocumentHead from "../hooks/useDocumentHead.js";
 import Button from "../components/Button.jsx";
 import EnquiryForm from "../components/EnquiryForm.jsx";
 import Faq from "../components/Faq.jsx";
-import { WHATSAPP_BASE_URL, WHATSAPP_NUMBER_DISPLAY } from "../constants.js";
+import { WHATSAPP_GENERAL_URL, WHATSAPP_NUMBER_DISPLAY } from "../constants.js";
 import { EmailIcon, ClockIcon } from "../components/icons/Icons.jsx";
 import WhatsAppIcon from "../components/icons/WhatsAppIcon.jsx";
 
@@ -62,7 +62,7 @@ export default function Contact() {
                 <h4>WhatsApp</h4>
                 <p>{WHATSAPP_NUMBER_DISPLAY} — the quickest way to reach us.</p>
                 <div style={{ marginTop: 16 }}>
-                  <Button variant="whatsapp" href={WHATSAPP_BASE_URL}>
+                  <Button variant="whatsapp" href={WHATSAPP_GENERAL_URL}>
                     Chat With Us
                   </Button>
                 </div>

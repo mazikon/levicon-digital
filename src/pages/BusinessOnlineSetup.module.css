@@ -75,4 +75,10 @@
     grid-template-columns: 1fr;
     gap: 6px;
   }
+  .disclosure {
+    padding: 22px 20px;
+  }
+  .stepRow {
+    padding: 22px 0;
+  }
 }

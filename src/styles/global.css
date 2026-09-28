@@ -38,6 +38,10 @@
   --radius: 8px;
   --radius-sm: 6px;
   --max: 1180px;
+
+  /* Live header height, published by Header.jsx. Declared here so the mobile
+     menu has a sane value before the first measurement lands. */
+  --header-h: 68px;
 }
 
 * {
@@ -45,6 +49,9 @@
 }
 html {
   scroll-behavior: smooth;
+  /* Belt-and-braces: nothing in the layout should be able to widen the page,
+     but this stops a stray wide child from producing a sideways scroll. */
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -54,6 +61,10 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  /* Long single words (URLs, brand names) must break rather than push the
+     viewport sideways on a 320px screen. */
+  overflow-wrap: break-word;
 }
 img {
   max-width: 100%;
@@ -72,6 +83,13 @@ a {
   margin: 0 auto;
   padding: 0 28px;
 }
+/* 28px of gutter on each side leaves too little room for two-column content
+   on a 320px screen, so step it down on the narrowest phones. */
+@media (max-width: 400px) {
+  .wrap {
+    padding: 0 20px;
+  }
+}
 
 h1,
 h2,
@@ -83,6 +101,7 @@ h4 {
   margin: 0 0 0.5em;
   color: var(--charcoal);
   letter-spacing: -0.015em;
+  overflow-wrap: break-word;
 }
 h1 {
   font-size: clamp(2.35rem, 4.8vw, 3.8rem);
@@ -308,6 +327,67 @@ section.tight {
 }
 .browser-body {
   padding: 24px;
+}
+
+/* =========================================================
+   Small-screen adjustments
+   Only spacing, wrapping and tap sizes change here — colours, type scale and
+   section order are deliberately left exactly as the desktop design.
+   ========================================================= */
+@media (max-width: 880px) {
+  section {
+    padding: 62px 0;
+  }
+  section.tight {
+    padding: 44px 0;
+  }
+  .page-hero {
+    padding: 48px 0 34px;
+  }
+  .section-head {
+    margin-bottom: 34px;
+  }
+
+  /* Comfortable tap height on every interactive control. */
+  .btn {
+    min-height: 48px;
+  }
+
+  /* Paired CTAs go full width rather than wrapping to a narrow orphan. */
+  .btn-row {
+    gap: 12px;
+  }
+  .btn-row .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .browser-bar {
+    padding: 9px 10px;
+    gap: 6px;
+  }
+  .browser-url {
+    margin-left: 4px;
+    font-size: 0.68rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .browser-body {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .browser-body {
+    padding: 12px;
+  }
+  .btn-row .btn {
+    padding: 0.9em 1.1em;
+    font-size: 0.95rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

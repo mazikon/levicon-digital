@@ -63,3 +63,22 @@
   margin-top: 4px;
   padding: 0.95em 1.8em;
 }
+
+@media (max-width: 620px) {
+  .form {
+    gap: 16px;
+  }
+  /* Full-width send button — the primary action stays visible and tappable. */
+  .submitRow {
+    align-self: stretch;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+  }
+  .form input,
+  .form select,
+  .form textarea {
+    /* 16px keeps iOS Safari from zooming the viewport on focus. */
+    font-size: 1rem;
+  }
+}

@@ -5,7 +5,7 @@ import Button from "../components/Button.jsx";
 import FlowDiagram from "../components/FlowDiagram.jsx";
 import BeforeAfter from "../components/BeforeAfter.jsx";
 import ServiceGrid from "../components/ServiceGrid.jsx";
-import { WHATSAPP_BASE_URL } from "../constants.js";
+import { WHATSAPP_GENERAL_URL } from "../constants.js";
 import {
   SearchIcon,
   WebsiteIcon,
@@ -108,7 +108,7 @@ export default function Home() {
               <Button variant="accent" to="/pricing">
                 Get Your Business Online
               </Button>
-              <Button variant="outline-light" href={WHATSAPP_BASE_URL}>
+              <Button variant="outline-light" href={WHATSAPP_GENERAL_URL}>
                 Talk to Us on WhatsApp
               </Button>
             </div>

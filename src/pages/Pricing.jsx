@@ -3,7 +3,7 @@ import useDocumentHead from "../hooks/useDocumentHead.js";
 import PriceCard from "../components/PriceCard.jsx";
 import Faq from "../components/Faq.jsx";
 import Button from "../components/Button.jsx";
-import { WHATSAPP_BASE_URL } from "../constants.js";
+import { WHATSAPP_GENERAL_URL } from "../constants.js";
 
 const FEATURES = [
   "One-page professional website",
@@ -113,7 +113,7 @@ export default function Pricing() {
               Message us directly on WhatsApp.
             </p>
           </div>
-          <Button variant="whatsapp" href={WHATSAPP_BASE_URL}>
+          <Button variant="whatsapp" href={WHATSAPP_GENERAL_URL}>
             Chat With Us
           </Button>
         </div>

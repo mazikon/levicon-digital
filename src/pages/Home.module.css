@@ -13,6 +13,17 @@
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 880px) {
+  .hero {
+    padding: 52px 0 56px;
+  }
+  .heroGrid {
+    gap: 36px;
+  }
+  .hero .lede {
+    margin-bottom: 1.8em;
+  }
+}
 /* restrained kicker pill — signals "established" without shouting */
 .heroKicker {
   display: inline-flex;

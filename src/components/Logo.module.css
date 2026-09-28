@@ -1,0 +1,23 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+/*
+ * Height-driven sizing. The artwork is 216x144, so `width: auto` keeps that
+ * exact ratio - the logo is never cropped, stretched or squashed.
+ * `object-fit: contain` is the safety net for the `max-width` case: if a very
+ * narrow viewport ever clamps the width, the pixels are letterboxed inside the
+ * box instead of being distorted.
+ *
+ * 36px reproduces the footprint the header and footer already reserved for the
+ * previous mark, so no surrounding padding or spacing had to change.
+ */
+.image {
+  display: block;
+  height: var(--logo-height, 36px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}

@@ -69,4 +69,25 @@
   border-radius: 12px;
   padding: 34px 36px 36px;
   box-shadow: var(--shadow-md);
+  min-width: 0;
+}
+
+@media (max-width: 620px) {
+  .formWrap {
+    padding: 26px 20px 28px;
+  }
+  /* The icon used to sit beside the copy at every width. On a narrow screen
+     that left barely 140px of column, which pushed the WhatsApp button wider
+     than the card and caused sideways scrolling. Stack it above instead. */
+  .contactCard {
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px 22px;
+  }
+  /* Give the WhatsApp CTA the full card width and a proper tap height. */
+  .contactCard :global(.btn-whatsapp) {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
 }
