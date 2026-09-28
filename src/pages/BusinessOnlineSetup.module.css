@@ -1,0 +1,78 @@
+.miniGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  border: none;
+  background: none;
+}
+@media (max-width: 700px) {
+  .miniGrid {
+    grid-template-columns: 1fr;
+  }
+}
+.miniCard {
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+}
+.miniCard h3 {
+  color: var(--emerald);
+  font-size: 1.05rem;
+}
+
+/* "How it works" sits on a Deep Emerald band */
+.steps {
+  border-top: 1px solid var(--on-brand-line);
+}
+.stepRow {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--on-brand-line);
+}
+.stepRow:last-child {
+  border-bottom: none;
+}
+.stepNum {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--green);
+  line-height: 1.2;
+}
+.stepRow h4 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+.stepRow p {
+  margin: 0;
+  color: var(--on-brand-muted);
+}
+
+/* clear-expectations disclosure */
+.disclosure {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--emerald);
+  background: var(--white);
+  padding: 28px 32px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-sm);
+  max-width: 720px;
+}
+.disclosure strong {
+  color: var(--emerald);
+}
+.disclosure ul {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+.disclosure li {
+  margin-bottom: 6px;
+}
+@media (max-width: 560px) {
+  .stepRow {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

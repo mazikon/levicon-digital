@@ -1,0 +1,321 @@
+/* =========================================================
+   LEVICON DIGITAL — design tokens
+   Deep Emerald + Fresh Green on Warm Cream
+   Professional · trustworthy · established · clear
+   ========================================================= */
+:root {
+  /* --- brand --- */
+  --emerald: #0f5132; /* Deep Emerald — primary brand colour */
+  --emerald-deep: #0b3f27; /* Deep Emerald, deeper tone for depth/hover */
+  --emerald-tint: #eaf2ec; /* Emerald wash — subtle surfaces, card fills */
+  --green: #22c55e; /* Fresh Green — CTAs and interactive accents */
+  --green-deep: #16a34a; /* Fresh Green, hover */
+  --green-tint: #e7f8ed; /* Fresh Green wash — success/active states */
+
+  /* --- neutrals --- */
+  --cream: #f8faf5; /* Warm Cream — page background */
+  --white: #ffffff; /* White — cards and content areas */
+  --charcoal: #17201b; /* Charcoal — headings and primary text */
+  --muted: #66736b; /* Muted Grey — secondary text */
+
+  /* --- lines & depth --- */
+  --line: #e4eae1; /* hairline border, tuned to sit on --cream */
+  --line-strong: #cfdacd; /* emphasised border / dividers on cream */
+  --warn: #a6402f; /* form validation only */
+
+  /* --- text on Deep Emerald --- */
+  --on-brand: #ffffff;
+  --on-brand-muted: #bcd2c5;
+  --on-brand-line: rgba(255, 255, 255, 0.16);
+
+  --shadow-sm: 0 1px 2px rgba(15, 81, 50, 0.05);
+  --shadow-md: 0 14px 30px -22px rgba(15, 81, 50, 0.45);
+  --shadow-lg: 0 30px 60px -34px rgba(15, 81, 50, 0.5);
+
+  --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+  --sans: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --radius: 8px;
+  --radius-sm: 6px;
+  --max: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 2px solid var(--emerald);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.14;
+  margin: 0 0 0.5em;
+  color: var(--charcoal);
+  letter-spacing: -0.015em;
+}
+h1 {
+  font-size: clamp(2.35rem, 4.8vw, 3.8rem);
+}
+h2 {
+  font-size: clamp(1.65rem, 3.1vw, 2.4rem);
+}
+h3 {
+  font-size: 1.25rem;
+}
+p {
+  margin: 0 0 1em;
+  max-width: 62ch;
+}
+p.lede {
+  font-size: 1.13rem;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---------- buttons ---------- */
+/* green is reserved for the single primary action on any screen */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 0.9em 1.65em;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.btn:hover {
+  box-shadow: var(--shadow-md);
+}
+/* Deep Emerald — secondary emphasis / structural action */
+.btn-primary {
+  background: var(--emerald);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--emerald-deep);
+}
+/* Fresh Green — the primary call to action */
+.btn-accent {
+  background: var(--green);
+  color: var(--charcoal);
+}
+.btn-accent:hover {
+  background: var(--green-deep);
+  color: var(--white);
+}
+/* Outline on light backgrounds */
+.btn-outline {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--charcoal);
+}
+.btn-outline:hover {
+  background: var(--emerald);
+  border-color: var(--emerald);
+  color: var(--white);
+}
+/* Outline for use on Deep Emerald backgrounds */
+.btn-outline-light {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--white);
+}
+.btn-outline-light:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--emerald);
+}
+/* WhatsApp — outlined, so it sits as a secondary action on light surfaces */
+.btn-whatsapp {
+  background: transparent;
+  border-color: var(--emerald);
+  color: var(--emerald);
+}
+.btn-whatsapp svg {
+  width: 1.05em;
+  height: 1.05em;
+  fill: currentColor;
+}
+.btn-whatsapp:hover {
+  background: var(--emerald);
+  border-color: var(--emerald);
+  color: var(--white);
+}
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* ---------- sections ---------- */
+section {
+  padding: 88px 0;
+}
+section.tight {
+  padding: 56px 0;
+}
+.section-head {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+.eyebrow {
+  font-size: 0.78rem;
+  color: var(--emerald);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  background: var(--green);
+  display: inline-block;
+}
+.eyebrow.on-dark {
+  color: var(--white);
+}
+.divider {
+  height: 1px;
+  background: var(--line);
+  border: 0;
+  margin: 0;
+}
+
+/* Deep Emerald brand band */
+.band {
+  background: var(--emerald);
+  color: var(--on-brand-muted);
+}
+.band h2,
+.band h3 {
+  color: var(--white);
+}
+.band .muted {
+  color: var(--on-brand-muted);
+}
+.band a {
+  color: var(--white);
+}
+.raise {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- page hero (inner pages) ---------- */
+.page-hero {
+  padding: 68px 0 44px;
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+.page-hero .eyebrow {
+  margin-bottom: 16px;
+}
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+}
+.breadcrumb a:hover {
+  color: var(--emerald);
+  text-decoration-color: var(--green);
+}
+
+/* ---------- browser mockup ---------- */
+.browser-mock {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+}
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  background: var(--emerald-tint);
+  border-bottom: 1px solid var(--line);
+}
+.browser-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+.browser-url {
+  flex: 1;
+  background: var(--white);
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  margin-left: 8px;
+  font-family: var(--sans);
+}
+.browser-body {
+  padding: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,72 @@
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 880px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+.contactCard {
+  border: 1px solid var(--line);
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+}
+/* WhatsApp is the fastest route to the business — give it the emphasis */
+.contactCard:first-child {
+  background: var(--emerald-tint);
+  border-color: var(--line-strong);
+}
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--emerald);
+  flex: 0 0 auto;
+}
+.iconWrap svg {
+  width: 20px;
+  height: 20px;
+  color: var(--white);
+}
+.contactCard h4 {
+  margin: 2px 0 6px;
+  font-size: 1.02rem;
+  color: var(--charcoal);
+}
+.contactCard p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.contactCard:first-child :global(.btn-whatsapp) {
+  background: var(--emerald);
+  border-color: var(--emerald);
+  color: var(--white);
+}
+.contactCard:first-child :global(.btn-whatsapp) svg {
+  fill: var(--white);
+}
+.contactCard:first-child :global(.btn-whatsapp):hover {
+  background: var(--emerald-deep);
+  border-color: var(--emerald-deep);
+}
+.formWrap {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 34px 36px 36px;
+  box-shadow: var(--shadow-md);
+}

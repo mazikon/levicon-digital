@@ -1,0 +1,62 @@
+.hero {
+  background: linear-gradient(180deg, var(--emerald) 0%, var(--emerald-deep) 100%);
+  padding: 82px 0 88px;
+}
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 920px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+}
+/* restrained kicker pill — signals "established" without shouting */
+.heroKicker {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid var(--on-brand-line);
+  border-radius: 999px;
+  padding: 7px 15px;
+  margin-bottom: 22px;
+}
+.hero h1 {
+  color: var(--white);
+  margin-bottom: 0.45em;
+}
+.hero .lede {
+  color: var(--on-brand-muted);
+  margin-bottom: 2.1em;
+}
+.hero :global(.browser-mock) {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+.servicesIntro a {
+  color: var(--emerald);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+  text-decoration-thickness: 2px;
+}
+.servicesIntro a:hover {
+  color: var(--emerald-deep);
+}
+.pricingBand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+.pricingBand :global(.btn) {
+  padding: 1em 1.9em;
+}

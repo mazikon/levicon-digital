@@ -1,0 +1,86 @@
+/* Deep Emerald footer — grounds the page and closes the brand story */
+.site {
+  background: var(--emerald-deep);
+  color: var(--on-brand-muted);
+  padding: 58px 0 30px;
+  margin-top: 40px;
+}
+.grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.brand {
+  max-width: 340px;
+}
+.site :global(.divider) {
+  background: var(--on-brand-line);
+}
+.brandName {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+.brandName::before {
+  content: "";
+  width: 11px;
+  height: 22px;
+  border-radius: 2px;
+  background: var(--green);
+}
+.brand p {
+  max-width: 340px;
+  color: var(--on-brand-muted);
+  font-size: 0.92rem;
+  margin-top: 14px;
+}
+.cols {
+  display: flex;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+.col h5 {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+.col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.col li {
+  margin-bottom: 11px;
+}
+.col a {
+  text-decoration: none;
+  font-size: 0.92rem;
+  color: var(--on-brand-muted);
+  transition: color 0.15s ease;
+}
+.col a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+  text-underline-offset: 4px;
+}
+.bottom {
+  border-top: 1px solid var(--on-brand-line);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--on-brand-muted);
+}

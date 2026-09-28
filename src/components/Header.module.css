@@ -1,0 +1,139 @@
+.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--serif);
+}
+.brandMark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.22rem;
+  color: var(--charcoal);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+/* Deep Emerald identity block — separates LEVICON DIGITAL from LEVICON SOLAR */
+.brandMark::before {
+  content: "";
+  width: 11px;
+  height: 22px;
+  border-radius: 2px;
+  background: var(--emerald);
+}
+.links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.links a:hover {
+  color: var(--charcoal);
+}
+.links a.active {
+  color: var(--emerald);
+  font-weight: 600;
+  border-color: var(--green);
+}
+.cta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.cta :global(.btn) {
+  padding: 0.72em 1.35em;
+  font-size: 0.92rem;
+}
+.toggle {
+  display: none;
+  background: none;
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.toggle span,
+.toggle span::before,
+.toggle span::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--charcoal);
+  position: relative;
+  transition: 0.2s;
+}
+.toggle span::before {
+  position: absolute;
+  top: -6px;
+}
+.toggle span::after {
+  position: absolute;
+  top: 6px;
+}
+
+@media (max-width: 880px) {
+  .links {
+    position: fixed;
+    inset: 0;
+    background: var(--cream);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 92px 28px 30px;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    border-bottom: 1px solid var(--line);
+  }
+  .links.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .links li {
+    width: 100%;
+    border-bottom: 1px solid var(--line);
+  }
+  .links a {
+    display: block;
+    padding: 16px 0;
+  }
+  .links a.active {
+    border-color: transparent;
+  }
+  .cta :global(.btn-accent) {
+    display: none;
+  }
+  .toggle {
+    display: block;
+  }
+}
